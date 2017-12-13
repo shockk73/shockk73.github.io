@@ -104,10 +104,6 @@ function getAddress(coords,btn,flag) {
                 }).done(function (route) {
                     route.options.set("mapStateAutoApply", false);
                     myMap.geoObjects.add(myroute = route);
-                     var mx=Math.abs(coordsstart[0] - coordsstop[0]); 
-                  var my=Math.abs(coordsstart[1] - coordsstop[1]); 
-                 var dist=Math.sqrt(Math.pow(mx,2)+Math.pow(my,2)); 
-                alert(dist);
                 }, function (err) {
                     throw err;
                 }, this);
@@ -139,9 +135,9 @@ function workmap() {
             '<br/>',
             '</address>'
         ].join('')
-    }, {
-        preset: 'islands#greenDotIcon'
-    });
+        }, {
+            preset: 'islands#greenDotIcon'
+        });
 
     myMap.geoObjects.add(myPlacemark1);
     
@@ -198,6 +194,47 @@ function workmap() {
 
 $(document).ready(function(){ 
         
+    
+            $("body").keydown(function(e) {
+                 if(e.which == 17) {
+                     $('#overlay').fadeIn(400, 
+                        function(){ 
+                            $('#map').css('width', '1200px');
+                            $('#map').css('height', '700px');
+                            $('#map').css('position', 'fixed');
+                            $('#map').css('top', '45%');
+                            $('#map').css('left', '50%');
+                            $('#map').css('margin-top', '-350px');
+                            $('#map').css('margin-left', '-600px');
+                            $('#map').css('z-index', '10');
+                            $("#modal_close1").css("display","block");
+                            myMap.container.fitToViewport();
+                            $('#map').css('display', 'block').animate({opacity: 1,top: '50%'}, 100); 
+
+                      });
+
+
+                      $('#modal_close1, #overlay').click( function(){ 
+                            
+                            $('#map')
+                                .animate({opacity: 1, top: '45%'}, 200,  
+                                    function(){ // пoсле aнимaции
+                                     $('#map').css('width', '500px');
+                                     $('#map').css('height', '370px');
+                                     $('#map').css('position', 'relative');
+                                     $('#map').css('top', '0');
+                                     $('#map').css('left', '0');
+                                     $('#map').css('margin-top', '0');
+                                     $('#map').css('margin-left', '0');
+                                     $('#map').css('z-index', '0');
+                                     myMap.container.fitToViewport();
+                                     $("#modal_close1").css("display","none");
+                                     $('#overlay').fadeOut(400); 
+                                    }
+                                );
+                           });
+                 }
+            });
          
             function checkvalide() {
                 if($("#adress").val() == "" || $("#home").val() == "" || $("#name").val() == "" || $("#tel").val() == "") {
@@ -250,7 +287,7 @@ $(document).ready(function(){
                     $(".modal_price").text("25(30)" + "BYN");
                 }
                 
-                    $('#overlay').fadeIn(400, 
+            $('#overlay').fadeIn(400, 
                 function(){ 
                     $('#modal_form') 
                         .css('display', 'block') 
