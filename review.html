@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Your Taxi</title>
+	<meta name="description" content="Создание адаптивного сайта" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
+	<link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" href="libs/owl-carousel/owl.carousel.css" />
+	<link rel="stylesheet" href="libs/countdown/jquery.countdown.css" />
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/media.css" />
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+    </script>
+    <script src="js/script3.js"></script>
+</head>
+<body>
+
+
+	<header class="top_header">
+	<br><br>
+		<div class="header_topline ">
+		
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="top_links">
+				        <img id="symb" src="img/taxisymb.svg" alt="">
+				        <div class="taxi">Taxi of our city</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mid_header">
+		    <div class="container">
+			<div class="col-md-6">
+			    <div class="row">
+			        <a target="_blank" class="logo">.</a>
+			    </div>
+			</div>
+			<div class="col-md-12">
+				<div class="row">					
+					<nav class="maian_mnu clearfix">
+						<button class="main_mnu_button hidden-md hidden-lg"><i class="fa fa-bars"></i></button>
+						<ul>
+							<li><a href="index.html" >Главная</a></li>
+							<li><a href="calc.html" >Рассчитать</a></li>
+							<li><a href="price.html">Тарифы</a></li>
+							<li><a href="review.html" >Отзывы</a></li>
+						</ul>
+						<div class="top_contacts"><i class="fa fa-mobile"></i> +375 29 77 77 777</div>
+					</nav>
+					<h1 class="logo">.</h1>
+					
+				</div>
+			</div>
+		</div>
+		</div>
+	</header>
+   <section class="order">
+       <div class="container">
+          <div class="col-md-12">
+              <div class="container">
+                <div class="row">
+              
+                    <span class="priceinfo">
+                    <center>Отзыв</center>
+                    </span>
+           
+            </div>
+            </div>
+       
+           <div class="row otz" style="margin-top: 4%;margin-left: 0%;border-radius: 10px;" >
+               <div class="row" style="margin-bottom: 1%;">
+                   <div class="comment">    
+                   <span class="col-md-1 nameotz"><span class="nameotz1">Василий</span></span>
+                   <div class="col-md-10 textotz">Отлично. Буду еще ездить!</div>
+                   </div>
+               </div>
+               <div class="row" style="margin-bottom: 1%;">
+                   <div class="comment">    
+                   <span class="col-md-1 nameotz"><span class="nameotz1">Петр</span></span>
+                   <div class="col-md-10 textotz">Один из лучших сервисов Минска по услугам перевозки!</div></div>
+               </div>
+               <div class="row" style="margin-bottom: 1%;">
+                   <div class="comment">    
+                   <span class="col-md-1 nameotz"><span class="nameotz1">Дмитрий</span></span>
+                   <div class="col-md-10 textotz">Достаточно неплохо...</div></div>
+               </div>
+                 </div>
+            <div id="lol" style="border:#F8A71A 1.6px solid">
+             <form>
+             <input style="margin:15px 0 30px 0;" id="nick" class="form-control" type="text" placeholder="Никнейм"><br>
+             <textarea id="otziv" cols="30" rows="10" class="form-control" placeholder="Отзыв..."></textarea>
+             <center><button type="button" class="btn btn-success" id="btnorder" onclick="send()" style="margin-top: 2%;width: 50%;">Отправить</button></center>
+            </form>
+    </div>
+           </div>
+          </div>
+       
+        
+
+       </section>
+   <!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+	<script src="libs/jquery/jquery-1.11.1.min.js"></script>
+	<script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+	<script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="libs/waypoints/waypoints-1.6.2.min.js"></script>
+	<script src="libs/scrollto/jquery.scrollTo.min.js"></script>
+	<script src="libs/owl-carousel/owl.carousel.min.js"></script>
+	<script src="libs/countdown/jquery.plugin.js"></script>
+	<script src="libs/countdown/jquery.countdown.min.js"></script>
+	<script src="libs/countdown/jquery.countdown-ru.js"></script>
+	<script src="libs/landing-nav/navigation.js"></script>
+	<script src="js/common.js"></script>
+	<!-- Yandex.Metrika counter --><!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter25346996 = new Ya.Metrika({id:25346996, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/25346996" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
+    </body>
+</html>

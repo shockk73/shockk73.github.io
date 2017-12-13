@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Your Taxi</title>
+	<meta name="description" content="Создание адаптивного сайта" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
+	<link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" href="libs/owl-carousel/owl.carousel.css" />
+	<link rel="stylesheet" href="libs/countdown/jquery.countdown.css" />
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/media.css" />
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+    </script>
+    <script src="js/script2.js"></script>
+</head>
+<body>
+
+
+	<header class="top_header">
+	<br><br>
+		<div class="header_topline ">
+		
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="top_links">
+				        <img id="symb" src="img/taxisymb.svg" alt="">
+				        <div class="taxi">Taxi of our city</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mid_header">
+		    <div class="container">
+			<div class="col-md-6">
+			    <div class="row">
+			        <a target="_blank" class="logo">.</a>
+			    </div>
+			</div>
+			<div class="col-md-12">
+				<div class="row">					
+					<nav class="maian_mnu clearfix">
+						<button class="main_mnu_button hidden-md hidden-lg"><i class="fa fa-bars"></i></button>
+						<ul>
+							<li><a href="index.html" >Главная</a></li>
+							<li><a href="calc.html" >Рассчитать</a></li>
+							<li><a href="price.html">Тарифы</a></li>
+							<li><a href="review.html" >Отзывы</a></li>
+						</ul>
+						<div class="top_contacts"><i class="fa fa-mobile"></i> +375 29 77 77 777</div>
+					</nav>
+					<h1 class="logo">.</h1>
+					
+				</div>
+			</div>
+		</div>
+		</div>
+	</header>
+   <section class="order">
+         <div class="container">
+             <div id="modal_form1">
+                 <!-- Сaмo oкнo -->
+                 <span id="modal_close">Х</span> <!-- Кнoпкa зaкрыть -->
+                 <center>
+                            <h2 class="fixedprice">Рассчет расстояния и стоимости</h2>
+                            <br><br>
+                        </center>
+                        <div class="windoworder">
+                            <div class="container">
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Откуда:</span></div><div class="modal_address1 col-md-6"> </div>
+                            </div>
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Куда:</span></div><div class="modal_address2 col-md-6"> </div>
+                            </div>
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Расстояние:</span></div><div class="modal_lenght col-md-6"> </div>
+                            </div>
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Стоимость:</span></div><div class="modal_price col-md-6"> </div>
+                            </div>
+                            </div>
+                        </div>
+                 
+                 
+             </div>
+             <div id="overlay"> </div><!-- Пoдлoжкa -->
+             
+
+              <div id="map" style="display: none;"></div>
+            <div class="col-md-7 cont">
+                <div class="container1"> <!-- контейнер для нашей картинки и индикатора -->
+                     <span class="ouro ouro2">
+                            <span class="left"><span class="anim"></span></span>
+                            <span class="right"><span class="anim"></span></span>
+                    </span>
+                    <div class="content">
+                        <div class="form-group">
+                          <label for="sel1" class="fixedprice">Выберете тип транспорта</label>
+                          <select class="form-control" id="sel1">
+                            <option>Легковая</option>
+                            <option>Минивен</option>
+                            <option>Универсал</option>
+                            <option>Аэропорт</option>
+                          </select>
+                        </div>
+                        <label for="sel1" class="fixedprice">Укажите маршрут</label>
+                        <br>
+                        <div class="input-group" style="margin-bottom: .5%;">
+                            <span class="input-group-addon inffortax" id="basic-addon1">Откуда</span>
+                            <input id="from" type="text" class="form-control ord"  list="address1data" name="msg" placeholder="Начальный адрес">
+                            <datalist id="address1data">
+
+                                <option></option>
+                                <option></option>
+
+
+                            </datalist>
+
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon inffortax" id="basic-addon2">Куда</span>
+                            <input id="to" type="text" class="form-control ord" name="msg"  list="address2data" placeholder="Конечный адрес">
+                            <datalist id="address2data">
+
+                                <option></option>
+                                <option></option>
+
+
+                            </datalist>
+                        </div>
+                        <br>
+                        <input type="button" value="Рассчитатть" id="btnorder" class="btn btn-success" click="calc()">
+                    </div>
+            </div>
+            </div>
+         </div>
+    </section>
+    <!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+	<script src="libs/jquery/jquery-1.11.1.min.js"></script>
+	<script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+	<script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="libs/waypoints/waypoints-1.6.2.min.js"></script>
+	<script src="libs/scrollto/jquery.scrollTo.min.js"></script>
+	<script src="libs/owl-carousel/owl.carousel.min.js"></script>
+	<script src="libs/countdown/jquery.plugin.js"></script>
+	<script src="libs/countdown/jquery.countdown.min.js"></script>
+	<script src="libs/countdown/jquery.countdown-ru.js"></script>
+	<script src="libs/landing-nav/navigation.js"></script>
+	<script src="js/common.js"></script>
+
+    </body>
+</html>
